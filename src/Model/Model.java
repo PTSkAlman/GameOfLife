@@ -10,19 +10,20 @@ public class Model {
     Cell c;
     Grid grid = new Grid();
     public Model() {
-        c = new Cell(2,2);
+        c = new Cell(0,0);
     }
 
 
-    int i = 2;
+    int i = 1;
     public void update() {
         c.checkNeighbor(grid);
-        System.out.println(c.getX() + "," + c.getY());
         c.update();
-
+        System.out.println(c.getX() + "," + c.getY());
         grid.updateGrid(c);
-        grid.checkIndex(c.getX(), c.getY());
-        grid.checkIndex(1,1);
+        System.out.println(grid.toString());
+
+
+
 
         c.setX(i);
         c.setY(i++);

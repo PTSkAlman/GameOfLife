@@ -19,28 +19,28 @@ public class Cell {
     public void checkNeighbor(Grid grid) {
         int sum = 0;
         int[][] g = grid.getGrid();
-        if (g[y-1][x-1] == 1) {
+        if (x - 1 >= 0 && y - 1 >= 0 && g[y-1][x-1] == 1) {
             sum++;
-        } else if (g[y-1][x] == 1) {
+        } else if (x>= 0 && y - 1 >= 0 && g[y-1][x] == 1) {
             sum++;
-        } else if (g[y-1][x+1] == 1) {
+        } else if (x + 1 >= g.length && y - 1 >= 0 && g[y-1][x+1] == 1) {
             sum++;
-        } else if (g[y][x-1] == 1) {
+        } else if (x - 1 >= 0 && y >= 0 && g[y][x-1] == 1) {
             sum++;
-        } else if (g[y][x+1] == 1) {
+        } else if (x + 1 >= g.length && y >= 0 && g[y][x+1] == 1) {
             sum++;
-        } else if (g[y+1][x-1] == 1) {
+        } else if (x - 1 >= 0 && y + 1 >= g.length && g[y+1][x-1] == 1) {
             sum++;
-        } else if (g[y+1][x] == 1) {
+        } else if (x >= 0 && y + 1 >= g.length && g[y+1][x] == 1) {
             sum++;
-        } else if (g[y+1][x+1] == 1) {
+        } else if (x + 1 >= g.length && y + 1 >= g.length && g[y+1][x+1] == 1) {
             sum++;
         }
-        if (sum > 4 || sum < 2) {
+        /*if (sum > 4 || sum < 2) {
             grid.getGrid()[y][x] = 0;
         } else {
             grid.getGrid()[y][x] = 1;
-        }
+        }*/
     }
 
     public Shape getShape() {

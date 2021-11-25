@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.Arrays;
+
 public class Grid {
 
     private int[][] grid;
@@ -17,7 +19,7 @@ public class Grid {
     public void checkIndex(int x, int y) {
         if (grid[y][x] == 0) {
             System.out.println("dead");
-        } else if (grid[y][x] >= 1) {
+        } else if (grid[y][x] == 1) {
             System.out.println("alive");
         }
     }
@@ -30,5 +32,14 @@ public class Grid {
 
     public int[][] getGrid() {
         return grid;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder string = new StringBuilder();
+        for (int i = 0 ; i < grid.length ; i++) {
+            string.append(Arrays.toString(grid[i])).append("\n");
+        }
+        return string.toString();
     }
 }
