@@ -16,7 +16,7 @@ public class Cell {
 
     }
 
-    public void checkNeighbor(Grid grid) {
+    /*public void checkNeighbor(Grid grid) {
         int sum = 0;
         int[][] g = grid.getGrid();
         if (x - 1 >= 0 && y - 1 >= 0 && g[y-1][x-1] == 1) {
@@ -40,8 +40,8 @@ public class Cell {
             grid.getGrid()[y][x] = 0;
         } else {
             grid.getGrid()[y][x] = 1;
-        }*/
-    }
+        }
+    }*/
 
     public Shape getShape() {
         return new Point(x,y);

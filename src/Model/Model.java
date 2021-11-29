@@ -7,31 +7,24 @@ import java.util.ArrayList;
 
 public class Model {
     Scene scene;
-    Cell c;
+    Cell[] cells;
     Grid grid = new Grid();
     public Model() {
-        c = new Cell(0,0);
+        cells = new Cell[3];
+        grid.startGrid(cells);
     }
 
-
-    int i = 1;
+    int i = 0;
     public void update() {
-        c.checkNeighbor(grid);
-        c.update();
-        System.out.println(c.getX() + "," + c.getY());
-        grid.updateGrid(c);
+        System.out.println("Generation: " + i++);
+        //c.update();
         System.out.println(grid.toString());
-
-
-
-
-        c.setX(i);
-        c.setY(i++);
+        grid.nextGrid();
     }
 
     public ArrayList<Shape> getShapes() {
         ArrayList<Shape> shapes = new ArrayList<>();
-        shapes.add(c.getShape());
+        //shapes.add(c.getShape());
         return shapes;
     }
 }
